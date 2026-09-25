@@ -8,32 +8,25 @@
         <path d="M9 21v-7h6v7"></path>
       </svg>`,
     alocacao: `
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 4a8 8 0 1 0 8 8"></path>
-        <path d="M12 4v8h8"></path>
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 5a11 11 0 1 0 11 11"></path>
+        <path d="M16 5v11h11"></path>
       </svg>`,
     objetivo: `
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8 5h8v4c0 4-1.8 6-4 6s-4-2-4-6z"></path>
-        <path d="M8 7H5v2c0 3 2 5 4 5"></path>
-        <path d="M16 7h3v2c0 3-2 5-4 5"></path>
-        <path d="M12 15v4"></path>
-        <path d="M8 21h8"></path>
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M9 6h14v5c0 6-2.8 9-7 9s-7-3-7-9z"></path>
+        <path d="M9 8H6v2c0 4 2 6 5 6M23 8h3v2c0 4-2 6-5 6"></path>
+        <path d="M16 20v6M11 28h10"></path>
       </svg>`,
     agente: `
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <rect x="5" y="7" width="14" height="13" rx="6"></rect>
-        <path d="M9 12h.01M15 12h.01"></path>
-        <path d="M9 16h6"></path>
-        <path d="M12 7V4"></path>
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="6" y="9" width="20" height="15" rx="7"></rect>
+        <path d="M12 15h.01M20 15h.01M12 19h8M16 9V5"></path>
       </svg>`,
     definicoes: `
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M12 4a8 8 0 0 0-7.2 11.5"></path>
-        <path d="M4.8 15.5A8 8 0 0 0 12 20"></path>
-        <path d="M12 20a8 8 0 0 0 7.2-11.5"></path>
-        <path d="M19.2 8.5A8 8 0 0 0 12 4"></path>
-        <circle cx="12" cy="12" r="3"></circle>
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M16 6a4 4 0 0 1 4 4 10.5 10.5 0 0 1 3 1.8 4 4 0 1 1 4 6.9 10.5 10.5 0 0 1 0 3.6 4 4 0 1 1-4 6.9 10.5 10.5 0 0 1-3 1.8 4 4 0 1 1-8 0 10.5 10.5 0 0 1-3-1.8 4 4 0 1 1-4-6.9 10.5 10.5 0 0 1 0-3.6 4 4 0 1 1 4-6.9 10.5 10.5 0 0 1 3-1.8 4 4 0 0 1 4-4z"></path>
+        <circle cx="16" cy="20" r="4"></circle>
       </svg>`
   };
 
@@ -62,6 +55,9 @@
   }
 
   function renderSelector(selected) {
+    const previous = document.querySelector(".seletorabas");
+    if (previous) previous.remove();
+
     const nav = document.createElement("nav");
     nav.className = "seletorabas";
     nav.setAttribute("aria-label", "Navegação principal");
