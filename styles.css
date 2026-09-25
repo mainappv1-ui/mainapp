@@ -1,0 +1,138 @@
+:root {
+  color-scheme: light;
+  --page-bg: #f1f2f3;
+  --text: #64666b;
+  --muted: #9a9ca1;
+  --tab-bg: #e6e7e9;
+  --tab-border: #d8d9dc;
+  --active-bg: #d7edf8;
+  --active: #159fdf;
+  --settings-pill: #e1e2e4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--page-bg);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    system-ui, sans-serif;
+  color: var(--text);
+}
+
+body {
+  min-height: 100svh;
+}
+
+button {
+  font: inherit;
+}
+
+#app {
+  min-height: 100svh;
+}
+
+.page {
+  min-height: 100svh;
+  padding: 24px 18px 104px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--page-bg);
+}
+
+.empty-page {
+  width: 100%;
+  max-width: 420px;
+  min-height: 60svh;
+}
+
+.settings-list {
+  width: min(340px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.settings-pill {
+  width: 100%;
+  min-height: 58px;
+  border: 0;
+  border-radius: 17px;
+  background: var(--settings-pill);
+  color: #707277;
+  font-size: 16px;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+}
+
+.seletorabas {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  height: 82px;
+  padding: 8px 20px max(8px, env(safe-area-inset-bottom));
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  background: rgba(230, 231, 233, 0.96);
+  border-top: 1px solid var(--tab-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.seletoraba {
+  width: 46px;
+  height: 46px;
+  justify-self: center;
+  border: 0;
+  border-radius: 15px;
+  background: transparent;
+  color: #9a9ca1;
+  display: grid;
+  place-items: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 120ms ease-out, color 120ms ease-out, transform 120ms ease-out;
+}
+
+.seletoraba:active {
+  transform: scale(0.96);
+}
+
+.seletoraba.active {
+  background: var(--active-bg);
+  color: var(--active);
+}
+
+.seletoraba svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seletoraba {
+    transition: none;
+  }
+}
+
+@media (min-width: 700px) {
+  .seletorabas {
+    left: 50%;
+    right: auto;
+    width: min(520px, 100%);
+    transform: translateX(-50%);
+    border-left: 1px solid var(--tab-border);
+    border-right: 1px solid var(--tab-border);
+  }
+}
